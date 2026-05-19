@@ -13,7 +13,6 @@ scuba_bag = {"inventory": [], "capacity": 3}
 
 diver = {"name": "Steve", "tank": tank,"bag": scuba_bag,
          "score": 0, "diving": True}
-
 items = {"rock": {"name": "rock", "description": "ordinary rock",
                   "value": 0},
          "silverCoin": {"name": "silver coin", "description":
