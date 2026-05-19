@@ -3,6 +3,7 @@
 #Version: 003.2 - modules removed
 ###############################################################################
 import random
+import highscore as h
 
 highScoreFile = "SpelunkingHighScore.txt"
 highScore = 0
@@ -109,8 +110,8 @@ def calculate_score():
     global diver
     diver["score"] = evaluate_loot()
     print(f"Total value of your loot: {diver['score']}")
-    print(f"Current high score: {highScore}")
-    if diver["score"] > int(highScore):
+    print(f"Current high score: {h.highScore}")
+    if diver["score"] > int(h.highScore):
         newHighScore(str(diver["score"]))
         print(f"New high score: {diver['score']}")
     else:
@@ -120,7 +121,7 @@ def calculate_score():
 def getHighScore():
     global highScore
     with open(highScoreFile, 'r') as file:
-        highScore = file.read()
+        h.highScore = file.read()
 
 
 def newHighScore(newScore):
@@ -131,7 +132,7 @@ def newHighScore(newScore):
 def introduction():
     print("Welcome!...")
     getHighScore()
-    print(f"Current high score: {highScore}")
+    print(f"Current high score: {h.highScore}")
 
 
 def game():
